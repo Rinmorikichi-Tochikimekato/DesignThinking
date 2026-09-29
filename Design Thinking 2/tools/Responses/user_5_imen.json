@@ -1,0 +1,137 @@
+{
+  "session_type": "combined_session",
+  "participant_note": "im just a girl",
+  "started_at": "2026-09-24T12:48:16.216Z",
+  "completed_at": "2026-09-24T12:53:32.987Z",
+  "responses": [
+    {
+      "id": "wireframe_q1",
+      "part": "wireframe",
+      "screen": "images/wireframe_v1.png",
+      "prompt": "What do you think this screen is for? What would you tap first?",
+      "answer": "too much",
+      "response_time_ms": 14027
+    },
+    {
+      "id": "wireframe_q2",
+      "part": "wireframe",
+      "screen": "images/wireframe_v1.png",
+      "prompt": "Now imagine you scroll down and hit this ‘End of batch’ point. What does that mean to you? Does it feel clear, or does it feel like it just stops?",
+      "answer": "what’s a batch",
+      "response_time_ms": 26990
+    },
+    {
+      "id": "wireframe_q3",
+      "part": "wireframe",
+      "screen": "images/wireframe_v2.png",
+      "prompt": "What does ‘Balanced’ mean here, if anything? Take a guess.",
+      "answer": "the screen is balanced? it is not",
+      "response_time_ms": 43349
+    },
+    {
+      "id": "wireframe_q4",
+      "part": "wireframe",
+      "screen": "images/wireframe_v2.png",
+      "prompt": "Try to find how you would turn personalization or tracking off completely. Describe, step by step, what you would click on.",
+      "answer": "i click reject",
+      "response_time_ms": 33012
+    },
+    {
+      "id": "wireframe_q5",
+      "part": "wireframe",
+      "screen": "images/wireframe_v2.png",
+      "prompt": "Did anything on this screen feel like it was nudging you toward one choice over the other, Accept vs. Reject?",
+      "answer": "nope",
+      "response_time_ms": 12979
+    },
+    {
+      "id": "wireframe_q6",
+      "part": "wireframe",
+      "screen": "images/wireframe_v3.png",
+      "prompt": "What is this ‘0% Dark Patterns’ banner telling you, in your own words?",
+      "answer": "no idea",
+      "response_time_ms": 32746
+    },
+    {
+      "id": "wireframe_q7",
+      "part": "wireframe",
+      "screen": "images/wireframe_v3.png",
+      "prompt": "Would you actually use an app like this instead of a normal feed? Why or why not?",
+      "answer": "no too bland",
+      "response_time_ms": 22097
+    },
+    {
+      "id": "wireframe_q8",
+      "part": "wireframe",
+      "screen": null,
+      "prompt": "Of these three, which one would you trust the most, and why?",
+      "answer": "middle gut feeling",
+      "response_time_ms": 17939
+    },
+    {
+      "id": "empathize_q1",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "Which social media platform(s) do you use most, and roughly how much time per day would you guess?",
+      "answer": "linkedin cause i deleted all other",
+      "response_time_ms": 11982
+    },
+    {
+      "id": "empathize_q2",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "What are you usually trying to get out of opening the app? Staying updated, connecting with people, killing time, something else?",
+      "answer": "doom scrolling tbh",
+      "response_time_ms": 13544
+    },
+    {
+      "id": "empathize_q3",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "Walk me through what a typical session looks like, step by step, from opening the app to closing it.",
+      "answer": "open ugh close",
+      "response_time_ms": 7373
+    },
+    {
+      "id": "empathize_q4",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "Can you describe a recent time a ‘quick check’ turned into something much longer? What happened?",
+      "answer": "doom scrolling happened",
+      "response_time_ms": 12195
+    },
+    {
+      "id": "empathize_q5",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "At what point does a session usually shift from feeling useful to feeling like too much, if it does at all?",
+      "answer": "2 hours",
+      "response_time_ms": 8168
+    },
+    {
+      "id": "empathize_q6",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "Have you ever tried muting topics, setting time limits, deleting the app, or a ‘digital detox’? What did you try, and did it actually work?",
+      "answer": "yes did not work just skip must delete",
+      "response_time_ms": 13763
+    },
+    {
+      "id": "empathize_q7",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "What's the one thing about how your feed decides what to show you that frustrates you most?",
+      "answer": "ads",
+      "response_time_ms": 6057
+    },
+    {
+      "id": "empathize_q8",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "If you could change one thing about how your feed behaves, what would it be?",
+      "answer": "no ads",
+      "response_time_ms": 6257
+    }
+  ],
+  "closing_note": ""
+}

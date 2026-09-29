@@ -1,0 +1,137 @@
+{
+  "session_type": "combined_session",
+  "participant_note": "34 years old, male, product manager. \nUse social media daily",
+  "started_at": "2026-09-23T20:31:49.015Z",
+  "completed_at": "2026-09-23T21:30:07.026Z",
+  "responses": [
+    {
+      "id": "wireframe_q1",
+      "part": "wireframe",
+      "screen": "images/wireframe_v1.png",
+      "prompt": "What do you think this screen is for? What would you tap first?",
+      "answer": "A community's hub/feed designed for social interaction between its members where member can posts, discuss topics, save/reflect at their personal level along with official community announcements. \nFirst action: interact with the post i found interest in",
+      "response_time_ms": 752995
+    },
+    {
+      "id": "wireframe_q2",
+      "part": "wireframe",
+      "screen": "images/wireframe_v1.png",
+      "prompt": "Now imagine you scroll down and hit this ‘End of batch’ point. What does that mean to you? Does it feel clear, or does it feel like it just stops?",
+      "answer": "It prompts an intentional/conscious check on whether I should continue or not, breaking mindless scrolling like in current other platforms. \nAlso depending on the social platform it is, a time to focus on the items saved to reflect, or continue scrolling to other topics. \n\nIt's clear that its provided as an intentional pause & not end of the feed itself. \nA little msg change would make it more clear e.g. 'you are caught up\" is generally used when all latest updates are covered.",
+      "response_time_ms": 424867
+    },
+    {
+      "id": "wireframe_q3",
+      "part": "wireframe",
+      "screen": "images/wireframe_v2.png",
+      "prompt": "What does ‘Balanced’ mean here, if anything? Take a guess.",
+      "answer": "Balanced in the terms of weights to different criteria of topics vs updates etc.",
+      "response_time_ms": 310247
+    },
+    {
+      "id": "wireframe_q4",
+      "part": "wireframe",
+      "screen": "images/wireframe_v2.png",
+      "prompt": "Try to find how you would turn personalization or tracking off completely. Describe, step by step, what you would click on.",
+      "answer": "Try to first change the weights if I can or Would go to the Minimal option instead of Balanced & look for options there.",
+      "response_time_ms": 165684
+    },
+    {
+      "id": "wireframe_q5",
+      "part": "wireframe",
+      "screen": "images/wireframe_v2.png",
+      "prompt": "Did anything on this screen feel like it was nudging you toward one choice over the other, Accept vs. Reject?",
+      "answer": "No, rather it feels like giving me clarity on how my feed is being formed.",
+      "response_time_ms": 94033
+    },
+    {
+      "id": "wireframe_q6",
+      "part": "wireframe",
+      "screen": "images/wireframe_v3.png",
+      "prompt": "What is this ‘0% Dark Patterns’ banner telling you, in your own words?",
+      "answer": "Dark patterns in terms of what is being tracked to personalize the content and what is being shown to be me internationally by platform change by behaviour/like/dislike accordingly. \n\nso the platform is being mindful in both",
+      "response_time_ms": 223196
+    },
+    {
+      "id": "wireframe_q7",
+      "part": "wireframe",
+      "screen": "images/wireframe_v3.png",
+      "prompt": "Would you actually use an app like this instead of a normal feed? Why or why not?",
+      "answer": "Yes, what I find different in this platform so far \n1) It is giving back the choice to me in terms of shall i continue scrolling or take time to focus on topics I save. \n2) Personalization feels driven by conscious choices (selected topics, joined communities) rather than algorithmic traps that encourage mindless scrolling. So focus it on value instead of just keeping me hooked.",
+      "response_time_ms": 223901
+    },
+    {
+      "id": "wireframe_q8",
+      "part": "wireframe",
+      "screen": null,
+      "prompt": "Of these three, which one would you trust the most, and why?",
+      "answer": "Screen 2: More open about on what is being shown to me (different criteria, individual weights).",
+      "response_time_ms": 178333
+    },
+    {
+      "id": "empathize_q1",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "Which social media platform(s) do you use most, and roughly how much time per day would you guess?",
+      "answer": "Instagram, LinkedIn. \n~1.5-2 hours overall (hope I am tracking it right)",
+      "response_time_ms": 82466
+    },
+    {
+      "id": "empathize_q2",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "What are you usually trying to get out of opening the app? Staying updated, connecting with people, killing time, something else?",
+      "answer": "Try to be about staying updated & connected, but often end up killing time once that is done.",
+      "response_time_ms": 66717
+    },
+    {
+      "id": "empathize_q3",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "Walk me through what a typical session looks like, step by step, from opening the app to closing it.",
+      "answer": "Instagram -> View stories -> Go through feed/posts (Like) to see what others are upto. \nThen on search bar & scroll different items.",
+      "response_time_ms": 83500
+    },
+    {
+      "id": "empathize_q4",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "Can you describe a recent time a ‘quick check’ turned into something much longer? What happened?",
+      "answer": "Yes, happens very often that get stuck in loop of scrolling especially now with the video formats. The topics are seemingly random but related. Then after sometime realises have been using app for 15-20 mins",
+      "response_time_ms": 110215
+    },
+    {
+      "id": "empathize_q5",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "At what point does a session usually shift from feeling useful to feeling like too much, if it does at all?",
+      "answer": "When I go from from posts from friends to other content.",
+      "response_time_ms": 60517
+    },
+    {
+      "id": "empathize_q6",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "Have you ever tried muting topics, setting time limits, deleting the app, or a ‘digital detox’? What did you try, and did it actually work?",
+      "answer": "Shifted the app icon position to stop opening the app unintentionally when I pickup the phone. Worked initially that you feel you have actually trying to open the app.",
+      "response_time_ms": 91297
+    },
+    {
+      "id": "empathize_q7",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "What's the one thing about how your feed decides what to show you that frustrates you most?",
+      "answer": "You end up watching the content that has no significance (but is just engaging) & a lot of such content.",
+      "response_time_ms": 76616
+    },
+    {
+      "id": "empathize_q8",
+      "part": "empathize",
+      "screen": null,
+      "prompt": "If you could change one thing about how your feed behaves, what would it be?",
+      "answer": "-> Control on the topics I select. Limited feed to that only \n-> Other content should be a separate section, with callouts, limits etc.",
+      "response_time_ms": 90733
+    }
+  ],
+  "closing_note": ""
+}

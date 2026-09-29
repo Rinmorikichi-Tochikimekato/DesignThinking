@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MindfulFeed — Ethical Feed Settings</title>
+<!-- Google Fonts: Newsreader & Manrope -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-surface-variant": "#424843",
+            "surface-container-low": "#f6f4ed",
+            "primary-fixed-dim": "#adcfb5",
+            "on-background": "#1b1c18",
+            "inverse-primary": "#adcfb5",
+            "outline": "#727972",
+            "error-container": "#ffdad6",
+            "on-secondary-container": "#496a55",
+            "surface-tint": "#476550",
+            "tertiary-fixed": "#d4e6eb",
+            "on-primary-container": "#a8cab1",
+            "tertiary-container": "#425257",
+            "surface-container": "#f0eee7",
+            "surface-container-high": "#eae8e1",
+            "surface": "#fbf9f2",
+            "tertiary": "#2b3b40",
+            "on-tertiary-fixed": "#0d1e22",
+            "secondary-fixed-dim": "#abcfb6",
+            "secondary": "#446651",
+            "primary-container": "#385642",
+            "on-tertiary-fixed-variant": "#39494e",
+            "surface-dim": "#dcdad3",
+            "secondary-fixed": "#c6ebd1",
+            "on-surface": "#1b1c18",
+            "on-error": "#ffffff",
+            "primary": "#213f2c",
+            "on-tertiary": "#ffffff",
+            "inverse-on-surface": "#f3f1ea",
+            "on-error-container": "#93000a",
+            "on-primary": "#ffffff",
+            "surface-variant": "#e4e2dc",
+            "surface-container-highest": "#e4e2dc",
+            "on-secondary-fixed": "#002111",
+            "on-primary-fixed-variant": "#2f4d3a",
+            "on-secondary-fixed-variant": "#2d4d3a",
+            "surface-bright": "#fbf9f2",
+            "tertiary-fixed-dim": "#b8cacf",
+            "outline-variant": "#c2c8c1",
+            "inverse-surface": "#30312c",
+            "surface-container-lowest": "#ffffff",
+            "primary-fixed": "#c8ebd0",
+            "error": "#ba1a1a",
+            "on-secondary": "#ffffff",
+            "secondary-container": "#c3e9cf",
+            "on-primary-fixed": "#032111",
+            "background": "#fbf9f2",
+            "on-tertiary-container": "#b3c5ca"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-mobile": "1.25rem",
+            "gutter-tablet": "1.5rem",
+            "space-md": "1rem",
+            "space-3xl": "4rem",
+            "gutter-desktop": "2rem",
+            "space-xl": "2rem",
+            "space-lg": "1.5rem",
+            "space-xxs": "0.25rem",
+            "container-max-width": "42rem",
+            "margin-tablet": "2rem",
+            "gutter-mobile": "1rem",
+            "space-sm": "0.75rem",
+            "space-xs": "0.5rem",
+            "space-2xl": "3rem",
+            "margin-desktop": "auto"
+          },
+          "fontFamily": {
+            "body-lg": ["Manrope"],
+            "body-md": ["Manrope"],
+            "display-lg-mobile": ["Newsreader"],
+            "headline-lg": ["Newsreader"],
+            "label-sm": ["Manrope"],
+            "label-md": ["Manrope"],
+            "headline-md": ["Newsreader"],
+            "body-sm": ["Manrope"],
+            "display-lg": ["Newsreader"],
+            "headline-sm": ["Newsreader"],
+            "label-lg": ["Manrope"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+            "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+            "headline-lg": ["28px", {"lineHeight": "36px", "fontWeight": "400"}],
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+            "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "500"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+            "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
+            "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "500"}],
+            "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1;
+    }
+    /* Soft ambient elevation for tranquil cards */
+    .soft-shadow {
+      box-shadow: 0 4px 24px -2px rgba(56, 86, 66, 0.06), 0 1px 3px 0 rgba(56, 86, 66, 0.04);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen selection:bg-secondary-container selection:text-on-secondary-container font-body-md text-body-md pb-28">
+<!-- TopAppBar Component (from Shared Components JSON) -->
+<header class="sticky top-0 z-40 bg-surface dark:bg-inverse-surface">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-gutter-tablet max-w-container-max-width mx-auto py-space-sm">
+<!-- Leading Icon -->
+<button aria-label="App Logo Icon" class="p-space-xs rounded-full hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 active:scale-95 flex items-center justify-center text-primary dark:text-inverse-primary">
+<span class="material-symbols-outlined text-headline-sm" data-icon="spa">spa</span>
+</button>
+<!-- Brand Headline -->
+<div class="text-headline-md font-headline-md font-medium text-primary dark:text-inverse-primary tracking-tight">
+        MindfulFeed
+      </div>
+<!-- Trailing Icon -->
+<button aria-label="Preferences" class="p-space-xs rounded-full hover:bg-surface-container dark:hover:bg-surface-container-high transition-colors duration-200 active:scale-95 flex items-center justify-center text-primary dark:text-inverse-primary">
+<span class="material-symbols-outlined text-headline-sm" data-icon="tune">tune</span>
+</button>
+</div>
+</header>
+<!-- Main Scrollable Canvas (Restricted to tranquil container-max-width 42rem) -->
+<main class="max-w-container-max-width mx-auto px-margin-mobile space-y-space-lg pt-space-xs">
+<!-- Ethical AI Compliance Indicator Banner -->
+<section class="bg-surface-container rounded-xl p-space-sm sm:p-space-md flex items-center justify-between soft-shadow transition-all duration-200">
+<div class="flex items-center space-x-space-xs min-w-0 pr-space-xs">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined fill-icon text-[18px]" data-icon="verified_user">verified_user</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center space-x-1.5 flex-wrap">
+<span class="font-label-lg text-label-lg text-primary">Ethical AI Compliance:</span>
+<span class="font-label-lg text-label-lg text-secondary">0% Dark Patterns</span>
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="check_circle">check_circle</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">Independent audit verified • No dopamine loops</p>
+</div>
+</div>
+<a class="flex-shrink-0 font-label-md text-label-md text-primary hover:text-secondary underline underline-offset-4 decoration-outline-variant px-space-xs py-space-xxs transition-colors" href="#audit-modal">
+        Tap for audit
+      </a>
+</section>
+<!-- Page Title & Reassurance Context -->
+<div class="space-y-space-xxs">
+<h1 class="font-headline-lg text-headline-lg font-headline-lg text-primary tracking-tight">Preset Modes</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        Choose how your attention is cultivated today. Switch anytime without algorithmic friction.
+      </p>
+</div>
+<!-- Preset-Mode Selector (Bento / Card Array) -->
+<!-- Screen 3 states: Discovery is selected -->
+<section aria-label="Feed Preset Modes" class="grid grid-cols-1 sm:grid-cols-3 gap-space-xs sm:gap-space-sm">
+<!-- Mode 1: Focus -->
+<div class="group relative bg-surface-container rounded-xl p-space-md cursor-pointer transition-all duration-200 hover:bg-surface-container-high border border-outline-variant/30 flex flex-col justify-between" role="button" tabindex="0">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="center_focus_strong">center_focus_strong</span>
+<span class="w-3.5 h-3.5 rounded-full border border-outline"></span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-space-xxs">Focus</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">Essential dispatches, slow essays, and zero incidental banter.</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-space-md block">15 min recommended</span>
+</div>
+<!-- Mode 2: Discovery (ACTIVE / SELECTED) -->
+<div class="relative bg-secondary-container/40 rounded-xl p-space-md cursor-pointer transition-all duration-200 border-2 border-secondary soft-shadow flex flex-col justify-between" role="button" tabindex="0">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="material-symbols-outlined text-primary" data-icon="explore">explore</span>
+<span class="w-4 h-4 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[12px]" data-icon="check">check</span>
+</span>
+</div>
+<div class="flex items-center gap-1.5 mb-space-xxs">
+<h2 class="font-headline-sm text-headline-sm text-primary font-medium">Discovery</h2>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-1.5 py-0.5 rounded">Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary font-medium leading-relaxed">
+            Explores community projects &amp; educational updates without sensationalism.
+          </p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-secondary/20 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-secondary-container">Serendipity tuned calm</span>
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="auto_awesome">auto_awesome</span>
+</div>
+</div>
+<!-- Mode 3: Social -->
+<div class="group relative bg-surface-container rounded-xl p-space-md cursor-pointer transition-all duration-200 hover:bg-surface-container-high border border-outline-variant/30 flex flex-col justify-between" role="button" tabindex="0">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="groups">groups</span>
+<span class="w-3.5 h-3.5 rounded-full border border-outline"></span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-space-xxs">Social</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">Direct contributions from familiar co-creators and trusted circles.</p>
+</div>
+<span class="font-label-sm text-label-sm text-outline mt-space-md block">Close circles only</span>
+</div>
+</section>
+<!-- Curated Feed Item Preview (Curated high-fidelity feed item for Priya) -->
+<section class="space-y-space-xs pt-space-xs">
+<div class="flex items-center justify-between px-space-xxs">
+<span class="font-label-lg text-label-lg text-outline uppercase tracking-wider">Preview for Priya</span>
+<span class="font-label-md text-label-md text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" data-icon="tune">tune</span> Balanced cadence
+        </span>
+</div>
+<!-- The Feed Card -->
+<article class="bg-surface-container rounded-xl p-space-md soft-shadow space-y-space-sm transition-all duration-200">
+<!-- Author info & timestamp (Muted typographic hierarchy, no metrics) -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-space-xs">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-headline-sm">
+<span class="material-symbols-outlined text-[20px]" data-icon="yard">yard</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface font-semibold">Urban Community Gardens</p>
+<p class="font-label-sm text-label-sm text-outline">45m ago • Riverdale Basin</p>
+</div>
+</div>
+<button aria-label="Bookmark for later" class="text-outline hover:text-primary transition-colors p-1 rounded-full">
+<span class="material-symbols-outlined text-[20px]" data-icon="bookmark_border">bookmark_border</span>
+</button>
+</div>
+<!-- Title -->
+<h3 class="font-headline-md text-headline-md text-primary leading-snug tracking-tight">
+          Volunteer planting day scheduled for Saturday at Riverdale Park
+        </h3>
+<!-- Content Excerpt with Optional Editorial Imagery -->
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+          We are preparing forty new heirloom vegetable raised beds alongside native pollinator corridors. Bring gardening gloves, comfortable footwear, and a water canteen; light refreshments will be provided under the pavilion.
+        </p>
+<!-- Imagery with compliant data-alt -->
+<div class="w-full h-44 rounded-lg overflow-hidden bg-surface-variant">
+<img class="w-full h-full object-cover" data-alt="A serene morning view of an urban community garden with neatly constructed timber raised garden beds filled with dark fertile soil and tiny green seedlings. Warm, diffuse golden sunlight filters through the surrounding green trees creating soft organic shadows. Two gardeners in simple canvas clothing share seed packets peacefully in the soft-focus background, maintaining a tranquil, earthy, Scandinavian organic calm aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSUIhm4ykrUf2C4s_LdVHQlCwQD-R6CgcBPxFKKZTeJvGMIsuxybgNspQvIsYKZh_x2_Y2763L4MnCqJv3bjJ4L_LW-HTBclK9zJOI8a-mGqB-CtKBnrtGrWgDEpNFNZXVZSQU8r7c3diB-WNIyBPzWDPxUwAUMLqYW1qfKVZO62743opEXUujD86wXWeD06uI8ohImS2Qu-QPcFGn4jTUqf3PgqUEKdeJsv3Zjp3rvBltvD18Y7gf"/>
+</div>
+<!-- Tags & Autonomy Explainer Section -->
+<div class="pt-space-xs flex flex-col sm:flex-row sm:items-center justify-between gap-space-xs">
+<!-- Intentional Chips -->
+<div class="flex items-center space-x-space-xs">
+<span class="font-label-sm text-label-sm bg-surface text-secondary border border-outline-variant/40 px-2.5 py-1 rounded-full">
+              Community
+            </span>
+<span class="font-label-sm text-label-sm bg-surface text-secondary border border-outline-variant/40 px-2.5 py-1 rounded-full">
+              Volunteering
+            </span>
+</div>
+<!-- "Why am I seeing this?" info button with revealable tooltip/tag -->
+<div class="inline-flex items-center">
+<button class="inline-flex items-center space-x-1.5 font-label-md text-label-md text-primary bg-surface hover:bg-surface-container-high transition-colors px-2.5 py-1.5 rounded-full border border-outline-variant/30" onclick="document.getElementById('transparency-drawer').classList.toggle('hidden')">
+<span class="material-symbols-outlined text-[15px] text-secondary" data-icon="info">info</span>
+<span>Why am I seeing this?</span>
+</button>
+</div>
+</div>
+<!-- Concise Tooltip / Transparency Banner -->
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-space-sm flex items-start space-x-space-xs text-on-surface-variant transition-all" id="transparency-drawer">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5 flex-shrink-0" data-icon="tune">tune</span>
+<div class="space-y-1">
+<p class="font-label-md text-label-md text-on-surface font-semibold">Matched via your opted-in 'Local Community' interest</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              This post does not utilize engagement heuristics, emotional resonance scoring, or predictive timing. You can turn off community updates in settings at any moment.
+            </p>
+</div>
+</div>
+</article>
+</section>
+<!-- Autonomy-Preserving Actions Section -->
+<section class="space-y-space-sm pt-space-xs">
+<div class="text-center">
+<span class="font-label-sm text-label-sm text-outline">You are always in total command</span>
+</div>
+<!-- Full-Width Affirmative Action -->
+<button class="w-full min-h-[48px] py-space-sm px-space-lg rounded-full bg-primary text-on-primary font-label-lg text-label-lg hover:bg-primary-container transition-colors duration-200 active:scale-[0.99] flex items-center justify-center space-x-2">
+<span>Continue without personalization</span>
+<span class="material-symbols-outlined text-[18px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<!-- Two Symmetrical Secondary Action Buttons -->
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="min-h-[48px] py-space-sm px-space-md rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.99] font-label-md text-label-md flex items-center justify-center space-x-1 text-center">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="pause_circle">pause_circle</span>
+<span class="truncate">Pause recommendations</span>
+</button>
+<button class="min-h-[48px] py-space-sm px-space-md rounded-full bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.99] font-label-md text-label-md flex items-center justify-center space-x-1 text-center">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="settings">settings</span>
+<span class="truncate">Manage subscription</span>
+</button>
+</div>
+</section>
+<!-- Session Completion Pause Indicator -->
+<section class="py-space-lg text-center space-y-space-xxs border-t border-outline-variant/30">
+<span class="material-symbols-outlined text-secondary text-[24px]" data-icon="spa">spa</span>
+<h4 class="font-headline-sm text-headline-sm text-primary">You are entirely up to date</h4>
+<p class="font-body-sm text-body-sm text-outline max-w-sm mx-auto">
+        Feel free to step away and return to the physical world. No new items will be generated until tomorrow morning.
+      </p>
+</section>
+</main>
+<!-- BottomNavBar Component (from Shared Components JSON) -->
+<!-- Active state mapped to 'Personalize' as this screen is Preset Modes / Personalization Settings -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-gutter-mobile py-space-xs max-w-container-max-width mx-auto bg-surface-container dark:bg-inverse-surface soft-shadow">
+<!-- Tab 1: Feed (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-space-md py-space-xxs hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="stream">stream</span>
+<span class="font-label-sm text-label-sm mt-0.5">Feed</span>
+</a>
+<!-- Tab 2: Personalize (ACTIVE MATCH) -->
+<a class="flex flex-col items-center justify-center bg-secondary-container dark:bg-primary-container text-on-secondary-container dark:text-on-primary-container rounded-full px-space-md py-space-xxs hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined fill-icon text-[24px]" data-icon="tune">tune</span>
+<span class="font-label-sm text-label-sm font-semibold mt-0.5">Personalize</span>
+</a>
+<!-- Tab 3: Reflect (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-outline px-space-md py-space-xxs hover:text-primary dark:hover:text-inverse-primary transition-colors duration-200 active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined text-[24px]" data-icon="self_improvement">self_improvement</span>
+<span class="font-label-sm text-label-sm mt-0.5">Reflect</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,18 @@
+\documentclass[border=2pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,positioning,arrows.meta}
+\begin{document}
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners=1pt, minimum height=0.7cm, font=\small},
+  scale=0.9
+]
+\node[box, minimum width=9cm] (h) at (0,4.6) {MindfulFeed -- Ethical AI Compliance: 0\% Dark Patterns};
+\node[box, minimum width=2.8cm] (m1) at (-3,3.8) {Focus};
+\node[box, minimum width=2.8cm, thick] (m2) at (0,3.8) {Discovery};
+\node[box, minimum width=2.8cm] (m3) at (3,3.8) {Social};
+\node[box, minimum width=9cm] (feed) at (0,3.0) {Feed item -- "Why am I seeing this?" icon};
+\node[box, minimum width=9cm] (cont) at (0,2.2) {[ Continue without personalization ]};
+\node[box, minimum width=4.3cm] (pause) at (-2.3,1.4) {[ Pause recommendations ]};
+\node[box, minimum width=4.3cm] (sub) at (2.3,1.4) {[ Manage subscription ]};
+\end{tikzpicture}
+\end{document}

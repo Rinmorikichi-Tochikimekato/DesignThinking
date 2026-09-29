@@ -1,0 +1,16 @@
+\documentclass[border=2pt]{standalone}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,positioning,arrows.meta}
+\begin{document}
+\begin{tikzpicture}[
+  box/.style={draw, rounded corners=1pt, minimum width=4.5cm, minimum height=0.7cm, font=\small},
+  scale=0.9
+]
+\node[box, dashed] (h) at (0,4) {MindfulFeed -- Batch 1 of 1};
+\node[box] (c1) at (0,3) {Post card 1};
+\node[box] (c2) at (0,2.2) {Post card 2};
+\node[box, dotted] (c3) at (0,1.4) {(cards 3--10)};
+\node[box, thick] (end) at (0,0.6) {End of batch};
+\node[box] (next) at (0,-0.2) {[ Next batch ]  [ Pause ]};
+\end{tikzpicture}
+\end{document}

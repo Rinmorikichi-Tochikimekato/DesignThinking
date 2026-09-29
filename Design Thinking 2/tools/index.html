@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MindfulFeed User Testing</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #f4f5f7;
+    color: #1c1e21;
+    display: flex;
+    justify-content: center;
+    padding: 32px 16px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    max-width: 640px;
+    width: 100%;
+    padding: 32px;
+  }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  .subtitle { color: #6b7280; font-size: 14px; margin: 0 0 24px; }
+  .progress { color: #6b7280; font-size: 13px; margin: 0 0 8px; }
+  .prompt { font-size: 18px; line-height: 1.4; margin: 0 0 16px; }
+  .intro-body { font-size: 15px; line-height: 1.6; background: #f4f5f7; border-radius: 8px; padding: 16px; margin: 0 0 20px; }
+  img.mock { display: block; max-width: 100%; border: 1px solid #e5e7eb; border-radius: 8px; margin: 0 0 20px; }
+  .mock-row { display: flex; gap: 8px; margin: 0 0 20px; }
+  .mock-row img.mock { max-width: 32%; }
+  textarea {
+    width: 100%;
+    min-height: 110px;
+    font-size: 15px;
+    font-family: inherit;
+    padding: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    resize: vertical;
+  }
+  textarea:focus { outline: none; border-color: #6366f1; }
+  .actions { margin-top: 16px; display: flex; justify-content: flex-end; gap: 8px; }
+  button {
+    font-family: inherit;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: #6366f1;
+    color: #fff;
+  }
+  button:disabled { background: #c7c9d1; cursor: not-allowed; }
+  button.secondary { background: #eef0f4; color: #1c1e21; }
+  .choice-list { display: flex; flex-direction: column; gap: 10px; margin: 20px 0; }
+  .choice-list div { background: #f4f5f7; color: #1c1e21; padding: 16px; border-radius: 8px; }
+  .choice-list div strong { display: block; margin-bottom: 4px; color: #1c1e21; }
+  .choice-list div span { color: #6b7280; font-size: 13px; }
+  .note { font-size: 13px; color: #6b7280; margin-top: 8px; }
+  pre#jsonOut {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 16px;
+    border-radius: 8px;
+    max-height: 320px;
+    overflow: auto;
+    font-size: 12px;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+</style>
+</head>
+<body>
+<div class="card" id="app"></div>
+
+<script>
+const PART1_INTRO_TEXT = "Part 1 of 2. I'm going to show you three versions of a screen from an app concept, one at a time, from roughest to most finished. For each one, just tell me what you think is going on and what you'd actually do. There's no wrong answer, and I'm not testing you. I'm testing the design.";
+
+const PART2_INTRO_TEXT = "Part 2 of 2. Thanks, that's the wireframes done. Now some general questions about your day to day social media habits.";
+
+const COMBINED_STEPS = [
+  { type: 'info', title: 'Part 1: Wireframes', body: PART1_INTRO_TEXT },
+  { type: 'question', id: 'wireframe_q1', part: 'wireframe', screenLabel: 'Part 1 · Screen 1 of 3', images: ['images/wireframe_v1.png'],
+    prompt: "What do you think this screen is for? What would you tap first?" },
+  { type: 'question', id: 'wireframe_q2', part: 'wireframe', screenLabel: 'Part 1 · Screen 1 of 3', images: ['images/wireframe_v1.png'],
+    prompt: "Now imagine you scroll down and hit this ‘End of batch’ point. What does that mean to you? Does it feel clear, or does it feel like it just stops?" },
+  { type: 'question', id: 'wireframe_q3', part: 'wireframe', screenLabel: 'Part 1 · Screen 2 of 3', images: ['images/wireframe_v2.png'],
+    prompt: "What does ‘Balanced’ mean here, if anything? Take a guess." },
+  { type: 'question', id: 'wireframe_q4', part: 'wireframe', screenLabel: 'Part 1 · Screen 2 of 3', images: ['images/wireframe_v2.png'],
+    prompt: "Try to find how you would turn personalization or tracking off completely. Describe, step by step, what you would click on." },
+  { type: 'question', id: 'wireframe_q5', part: 'wireframe', screenLabel: 'Part 1 · Screen 2 of 3', images: ['images/wireframe_v2.png'],
+    prompt: "Did anything on this screen feel like it was nudging you toward one choice over the other, Accept vs. Reject?" },
+  { type: 'question', id: 'wireframe_q6', part: 'wireframe', screenLabel: 'Part 1 · Screen 3 of 3', images: ['images/wireframe_v3.png'],
+    prompt: "What is this ‘0% Dark Patterns’ banner telling you, in your own words?" },
+  { type: 'question', id: 'wireframe_q7', part: 'wireframe', screenLabel: 'Part 1 · Screen 3 of 3', images: ['images/wireframe_v3.png'],
+    prompt: "Would you actually use an app like this instead of a normal feed? Why or why not?" },
+  { type: 'question', id: 'wireframe_q8', part: 'wireframe', screenLabel: 'Part 1 · All three screens', images: ['images/wireframe_v1.png', 'images/wireframe_v2.png', 'images/wireframe_v3.png'],
+    prompt: "Of these three, which one would you trust the most, and why?" },
+  { type: 'info', title: 'Part 2: Your habits', body: PART2_INTRO_TEXT },
+  { type: 'question', id: 'empathize_q1', part: 'empathize', screenLabel: 'Part 2 · Question 1 of 8',
+    prompt: "Which social media platform(s) do you use most, and roughly how much time per day would you guess?" },
+  { type: 'question', id: 'empathize_q2', part: 'empathize', screenLabel: 'Part 2 · Question 2 of 8',
+    prompt: "What are you usually trying to get out of opening the app? Staying updated, connecting with people, killing time, something else?" },
+  { type: 'question', id: 'empathize_q3', part: 'empathize', screenLabel: 'Part 2 · Question 3 of 8',
+    prompt: "Walk me through what a typical session looks like, step by step, from opening the app to closing it." },
+  { type: 'question', id: 'empathize_q4', part: 'empathize', screenLabel: 'Part 2 · Question 4 of 8',
+    prompt: "Can you describe a recent time a ‘quick check’ turned into something much longer? What happened?" },
+  { type: 'question', id: 'empathize_q5', part: 'empathize', screenLabel: 'Part 2 · Question 5 of 8',
+    prompt: "At what point does a session usually shift from feeling useful to feeling like too much, if it does at all?" },
+  { type: 'question', id: 'empathize_q6', part: 'empathize', screenLabel: 'Part 2 · Question 6 of 8',
+    prompt: "Have you ever tried muting topics, setting time limits, deleting the app, or a ‘digital detox’? What did you try, and did it actually work?" },
+  { type: 'question', id: 'empathize_q7', part: 'empathize', screenLabel: 'Part 2 · Question 7 of 8',
+    prompt: "What's the one thing about how your feed decides what to show you that frustrates you most?" },
+  { type: 'question', id: 'empathize_q8', part: 'empathize', screenLabel: 'Part 2 · Question 8 of 8',
+    prompt: "If you could change one thing about how your feed behaves, what would it be?" },
+];
+
+let state = { stage: 'landing' };
+
+function slugify(name) {
+  return name.trim().toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_+|_+$/g, '') || 'anon';
+}
+
+function nextUserNumber() {
+  const n = parseInt(localStorage.getItem('mf_user_counter') || '0', 10) + 1;
+  localStorage.setItem('mf_user_counter', String(n));
+  return n;
+}
+
+function resetState() {
+  state = {
+    stage: 'participant-note',
+    sessionType: 'combined_session',
+    steps: COMBINED_STEPS,
+    stepIndex: 0,
+    responses: [],
+    participantName: '',
+    participantNote: '',
+    startedAt: new Date().toISOString(),
+    questionShownAt: null,
+  };
+}
+
+function render() {
+  const app = document.getElementById('app');
+  app.innerHTML = '';
+  if (state.stage === 'landing') return renderLanding(app);
+  if (state.stage === 'participant-note') return renderParticipantNote(app);
+  if (state.stage === 'step') return renderStep(app);
+  if (state.stage === 'closing-note') return renderClosingNote(app);
+  if (state.stage === 'done') return renderDone(app);
+}
+
+function renderLanding(app) {
+  app.innerHTML = `
+    <h1>MindfulFeed User Testing</h1>
+    <p class="subtitle">This session covers two things, back to back, in one go. Takes about 10–15 minutes.</p>
+    <div class="choice-list">
+      <div>
+        <strong>1. Wireframes</strong>
+        <span>React to three mockup versions of a screen (v1, v2, v3).</span>
+      </div>
+      <div>
+        <strong>2. Empathize interview</strong>
+        <span>General questions about your social media habits.</span>
+      </div>
+    </div>
+    <div class="actions">
+      <button id="btnStart">Start</button>
+    </div>
+    <p class="note">At the end you'll download a small JSON file. Please send that file back. Nothing is sent anywhere automatically.</p>
+  `;
+  document.getElementById('btnStart').onclick = () => { resetState(); render(); };
+}
+
+function renderParticipantNote(app) {
+  app.innerHTML = `
+    <h1>Who's answering?</h1>
+    <p class="subtitle">Name is just used for the saved filename.</p>
+    <input id="nameInput" type="text" placeholder="First name" style="width:100%; font-size:15px; padding:12px; border:1px solid #d1d5db; border-radius:8px; margin-bottom:16px;">
+    <p class="subtitle">One line about you, e.g. "24, marketing coordinator, checks feeds throughout the workday"</p>
+    <textarea id="noteInput" placeholder="Type a short line describing yourself"></textarea>
+    <div class="actions">
+      <button class="secondary" id="btnBack">Back</button>
+      <button id="btnContinue" disabled>Continue</button>
+    </div>
+  `;
+  const nameInput = document.getElementById('nameInput');
+  const noteInput = document.getElementById('noteInput');
+  const continueBtn = document.getElementById('btnContinue');
+  const checkValid = () => {
+    continueBtn.disabled = nameInput.value.trim().length === 0 || noteInput.value.trim().length === 0;
+  };
+  nameInput.addEventListener('input', checkValid);
+  noteInput.addEventListener('input', checkValid);
+  document.getElementById('btnBack').onclick = () => { state = { stage: 'landing' }; render(); };
+  continueBtn.onclick = () => {
+    state.participantName = nameInput.value.trim();
+    state.participantNote = noteInput.value.trim();
+    state.stage = 'step';
+    render();
+  };
+}
+
+function currentStep() { return state.steps[state.stepIndex]; }
+
+function renderStep(app) {
+  const step = currentStep();
+  if (step.type === 'info') return renderInfoStep(app, step);
+  return renderQuestionStep(app, step);
+}
+
+function renderInfoStep(app, step) {
+  app.innerHTML = `
+    <h1>${step.title}</h1>
+    <p class="intro-body">${step.body}</p>
+    <div class="actions">
+      <button id="btnBegin">Begin</button>
+    </div>
+  `;
+  document.getElementById('btnBegin').onclick = () => { state.stepIndex += 1; render(); };
+}
+
+function renderQuestionStep(app, step) {
+  state.questionShownAt = Date.now();
+  const images = (step.images || []).map(src => `<img class="mock" src="${src}" alt="mockup">`).join('');
+  const wrapClass = (step.images || []).length > 1 ? 'mock-row' : '';
+  app.innerHTML = `
+    <p class="progress">${step.screenLabel}</p>
+    <div class="${wrapClass}">${images}</div>
+    <p class="prompt">${step.prompt}</p>
+    <textarea id="answerInput" placeholder="Type your answer here"></textarea>
+    <div class="actions">
+      <button id="btnNext" disabled>Next</button>
+    </div>
+  `;
+  const input = document.getElementById('answerInput');
+  const nextBtn = document.getElementById('btnNext');
+  input.addEventListener('input', () => { nextBtn.disabled = input.value.trim().length === 0; });
+  nextBtn.onclick = () => {
+    const responseTimeMs = Date.now() - state.questionShownAt;
+    state.responses.push({
+      id: step.id,
+      part: step.part,
+      screen: (step.images && step.images.length === 1) ? step.images[0] : null,
+      prompt: step.prompt,
+      answer: input.value.trim(),
+      response_time_ms: responseTimeMs,
+    });
+    state.stepIndex += 1;
+    if (state.stepIndex >= state.steps.length) {
+      state.stage = 'closing-note';
+    }
+    render();
+  };
+}
+
+function renderClosingNote(app) {
+  app.innerHTML = `
+    <h1>Almost done</h1>
+    <p class="subtitle">Anything else you noticed or want to add? Optional.</p>
+    <textarea id="closingInput" placeholder="Optional"></textarea>
+    <div class="actions">
+      <button id="btnFinish">Finish</button>
+    </div>
+  `;
+  document.getElementById('btnFinish').onclick = () => {
+    state.closingNote = document.getElementById('closingInput').value.trim();
+    state.completedAt = new Date().toISOString();
+    const userNumber = nextUserNumber();
+    state.savedFilename = `user_${userNumber}_${slugify(state.participantName)}.json`;
+    state.stage = 'done';
+    render();
+  };
+}
+
+function buildResult() {
+  return {
+    session_type: state.sessionType,
+    participant_name: state.participantName,
+    participant_note: state.participantNote,
+    started_at: state.startedAt,
+    completed_at: state.completedAt,
+    responses: state.responses,
+    closing_note: state.closingNote || '',
+  };
+}
+
+function renderDone(app) {
+  const json = JSON.stringify(buildResult(), null, 2);
+  app.innerHTML = `
+    <h1>Thanks — you're done</h1>
+    <p class="subtitle">Download the file below and send it back.</p>
+    <pre id="jsonOut">${json.replace(/</g, '&lt;')}</pre>
+    <div class="actions">
+      <button class="secondary" id="btnCopy">Copy to clipboard</button>
+      <button id="btnDownload">Download JSON</button>
+    </div>
+    <p class="note"><a href="#" id="btnRestart">Run another session</a></p>
+  `;
+  document.getElementById('btnDownload').onclick = () => {
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = state.savedFilename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  };
+  document.getElementById('btnCopy').onclick = () => {
+    navigator.clipboard.writeText(json);
+    const btn = document.getElementById('btnCopy');
+    const original = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(() => { btn.textContent = original; }, 1500);
+  };
+  document.getElementById('btnRestart').onclick = (e) => {
+    e.preventDefault();
+    state = { stage: 'landing' };
+    render();
+  };
+}
+
+render();
+</script>
+</body>
+</html>
